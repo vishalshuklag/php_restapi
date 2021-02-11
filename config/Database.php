@@ -2,7 +2,7 @@
     class Database {
         // properties -> DB params
         private $host = 'localhost';
-        private $dbname = 'myblog';
+        private $dbname = 'sample';
         private $username = 'root';
         private $password = 'root';
         private $conn ;

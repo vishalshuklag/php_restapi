@@ -1,35 +1,33 @@
-<?php 
-
+<?php
     // Headers
     header('Access-Control-Allow-Origin:  *');
     header('Content-type: application/json');
-    header('Access-Control-Allow-Methos: DELETE');
+    header('Access-Control-Allow-Methos: POST');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Access-Control-Allow-Methos, Content-type, Access-Control-Allow-Origin, Authorization, X-Requested-With');
 
     include_once '../../config/Database.php';
-    include_once '../../models/Post.php';
+    include_once '../../models/Category.php';
 
     // Instantiate DB & Connect
     $databse = new Database();
     $db = $databse->connect();
 
     // Instantiate blog post object
-    $post = new Post($db);
+    $category = new Category($db);
 
-    // Get the raw posted data
+    // Get the raw category data
     $data = json_decode(file_get_contents('php://input'));
+    $category->id = $data->id;
+    $category->name = $data->name;
     
-    // Set ID of post
-    $post->id = $data->id;
-
-    // Delete post
-    if ($post->destroy()) {
+    // create category
+    if ($category->create()) {
         echo json_encode(
-            array('message' => 'Post Deleted !!')
+            array('message' => 'category created !!')
         );
     } else {
         
         echo json_encode(
-            array('message' => 'Post Not Deleted !!')
+            array('message' => 'category Not created !!')
         );
     }

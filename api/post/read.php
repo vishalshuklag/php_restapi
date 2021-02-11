@@ -37,10 +37,7 @@
                 'category_id' => $category_id,
                 'category_name' => $category_name
             );
-            // print_r ($post_item);
-            // var_dump($post_item);
             // push to data
-            // array_push($post_arr, $post_item);
             array_push($post_arr['data'], $post_item);
 
         }
