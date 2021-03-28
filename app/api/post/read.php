@@ -25,7 +25,7 @@
         // post array
         $post_arr = array();
 
-        $post_arr['data'] = array();
+        // $post_arr['data'] = array();
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
 
@@ -38,7 +38,7 @@
                 'category_name' => $category_name
             );
             // push to data
-            array_push($post_arr['data'], $post_item);
+            array_push($post_arr, $post_item);
 
         }
         // Turn to json & output
