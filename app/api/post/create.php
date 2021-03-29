@@ -25,7 +25,6 @@
     $post->category_id = $data->category_id;
 
     // create post
-
     if ($post->create()) {
         echo json_encode(
             array('message' => 'Post created !!')

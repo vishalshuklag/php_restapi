@@ -21,8 +21,36 @@
       <main role="main">
         <div class="album py-5 bg-light">
           <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
               <h1>POSTS</h1>
+              <button class="btn btn-outline-success" id="addPost">+ Add</button>
+            </div>
               <hr>
+            <div id="postFormDiv" style="display: none;">
+              <form id="postForm">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" name="title" id="title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                  <label for="body">Description</label>
+                  <textarea name="body" id="body" class="form-control" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <select name="category_id" id="category-id" class="form-control">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="author">Author</label>
+                  <input type="text" name="author" id="author-name" class="form-control">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-success mb-3">
+              </form>
+            </div>
             <div class="row" id="posts">
             </div>
             <h1>CATEGORY</h1>
